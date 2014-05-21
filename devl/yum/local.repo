@@ -1,0 +1,6 @@
+[local]
+name=local java
+baseurl=http://yum-ip-addr/
+enabled=1
+gpgcheck=0
+protect=1
