@@ -1,4 +1,5 @@
 FROM centos
+MAINTAINER jfoutz@gmail.com
 RUN yum install -y createrepo
 RUN yum install -y httpd
 RUN mkdir -p /var/www/html/rpm/oracle-java/8u5/

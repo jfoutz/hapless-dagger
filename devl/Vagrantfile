@@ -7,7 +7,12 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provider "docker" do |d|
         d.build_dir = "./yum"
-        d.ports = ["9000:80"]
-        config.vm.network "forwarded_port", host: 9000, guest: 9000
+        d.name = "yum"
+#        d.ports = ["9000:80"]
+#        config.vm.network "forwarded_port", host: 9000, guest: 9000
+    end
+    config.vm.provider "docker" do |d|
+        d.build_dir = "./cassandra"
+        d.link("yum:yum")
     end
 end
